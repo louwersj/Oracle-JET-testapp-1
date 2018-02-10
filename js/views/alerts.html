@@ -1,0 +1,40 @@
+<!--
+ Copyright (c) 2014, 2017, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+<div class="oj-hybrid-padding">
+    <div id='fragment-container'>
+        <div class="oj-panel oj-margin">
+            <h3 class="oj-header-border" data-bind="text: 'Open Fraud Alerts'"></h3> 
+            <br/>
+            <table id="t1" summary="Open Fraud Alerts" aria-label="openfraudalerts"
+                   data-bind="ojComponent: {component: 'ojTable', 
+                                        data: datasource,
+                                        rootAttributes: {style:'width: 100%; height:100%;'},
+                                        columns: [{headerText: 'Alert date',
+                                                   field : 'created',
+                                                   sortable: 'enabled'},
+                                                  {headerText: 'Priority',
+                                                   field: 'priority',
+                                                   sortable: 'enabled'},
+                                                  {headerText: 'Score', 
+                                                   field: 'scoring',
+                                                   sortable: 'enabled'},
+                                                  {headerText: 'Main anomaly', 
+                                                   field: 'description',
+                                                   sortable: 'enabled'},
+                                                  {headerText: 'Account status', 
+                                                   field: 'accountstatus',
+                                                   sortable: 'enabled'},
+                                                  {headerText: 'Owner Informed',
+                                                   field: 'ownerinformed',
+                                                   sortable: 'enabled'},
+                                                  {headerText: 'Auto action',
+                                                   field: 'autoaction',
+                                                   sortable: 'enabled'}]
+                                        }">
+            </table>
+        </div>
+    </div>
+</div>
+<br>

@@ -3,15 +3,20 @@
  * The Universal Permissive License (UPL), Version 1.0
  */
 /*
- * Your incidents ViewModel code goes here
+ * Your dashboard ViewModel code goes here
  */
-define(['ojs/ojcore', 'knockout', 'jquery'],
- function(oj, ko, $) {
+define(['ojs/ojcore', 'knockout', 'viewModels/common/openAlerts', 'jquery', 'ojs/ojtable', 'ojs/ojcollectiontabledatasource'],
+ function(oj, ko, openAlerts, $) {
   
-    function IncidentsViewModel() {
+    function DashboardViewModel() {
       var self = this;
+      
+      self.openAlertList = openAlerts.createOpenAlertsCollection();
+      self.datasource = ko.observable();
+      self.datasource(new oj.CollectionTableDataSource(self.openAlertList));
+      
       // Below are a subset of the ViewModel methods invoked by the ojModule binding
-      // Please reference the ojModule jsDoc for additional available methods.
+      // Please reference the ojModule jsDoc for additionaly available methods.
 
       /**
        * Optional ViewModel method invoked when this ViewModel is about to be
@@ -68,10 +73,10 @@ define(['ojs/ojcore', 'knockout', 'jquery'],
     }
 
     /*
-     * Returns a constructor for the ViewModel so that the ViewModel is constructed
+     * Returns a constructor for the ViewModel so that the ViewModel is constrcuted
      * each time the view is displayed.  Return an instance of the ViewModel if
      * only one instance of the ViewModel is needed.
      */
-    return new IncidentsViewModel();
+    return new DashboardViewModel();
   }
 );
