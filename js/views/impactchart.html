@@ -1,10 +1,44 @@
 <!--
  Copyright (c) 2014, 2017, Oracle and/or its affiliates.
  The Universal Permissive License (UPL), Version 1.0
+ xxx
  -->
+
 <div class="oj-hybrid-padding">
   <h1>Fraud alert impact</h1>
   <div>
       Fraud alert visualization. Enabling users to quickly gain insight on potential impact and priority of fraud alerts
   </div>
+</div>
+<div class="oj-flex oj-flex-items-pad">
+<!--
+  <div class=oj-flex-item">
+    <div id="barchart" data-bind="ojComponent: {
+             component: 'ojChart',
+             type: 'bar',
+             series: barSeriesValue,
+             groups: barGroupsValue,
+             animationOnDisplay: 'auto',
+             animationOnDataChange: 'auto',
+             hoverBehaviour: 'dim'
+          }"
+          style="max-width:500px;width:100%;height:350px;">
+    </div>
+  </div>
+-->
+  
+  <div class="oj-flex-item">
+      <div data-bind="ojComponent: {
+        component: 'ojChart',
+        type: 'bubble',
+        series: bubbleSeriesValue,
+        groups: bubbleGroupsValue,
+        animationOnDisplay: 'auto',
+        animationOnDataChange: 'auto',
+        hoverBehaviour: 'dim'
+     }"
+     style="max-width:500px;width:100%;height:350px;">
+     </div>
+  </div>
+
 </div>

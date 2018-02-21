@@ -1,8 +1,8 @@
-define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojChart'],
+require(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojchart'],
 function(oj, ko, $)
 {   
-    function impactchartViewModel() {
-    var self = this;
+    function ChartModel() {
+    
         /* chart data */
         var bubbleSeries = [{name : "Series 1", items : [{x:15, y:25, z:5}, {x:25, y:30, z:12}, {x:25, y:45, z:12}]},
                             {name : "Series 2", items : [{x:15, y:15, z:8}, {x:20, y:35, z:14}, {x:40, y:55, z:35}]},
@@ -16,8 +16,11 @@ function(oj, ko, $)
         this.bubbleGroupsValue = ko.observableArray(bubbleGroups);
     }
     
-    var impactchartViewModel = new impactchartViewModel();
+    var chartModel = new ChartModel();
     
-  
-    return impactchartViewModel;
-});	
+    $(
+	function(){
+            ko.applyBindings(chartModel, document.getElementById('chart-container'));
+	}
+    );
+});				
