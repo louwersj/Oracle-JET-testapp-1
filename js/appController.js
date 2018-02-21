@@ -19,6 +19,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
        self.router.configure({
          'dashboard': {label: 'Dashboard', isDefault: true},
          'alerts': {label: 'Alerts'},
+         'impactchart':{label: 'visualize'},
          'investigation': {label: 'Investigation'}
        });
       oj.Router.defaults['urlAdapter'] = new oj.Router.urlParamAdapter();
